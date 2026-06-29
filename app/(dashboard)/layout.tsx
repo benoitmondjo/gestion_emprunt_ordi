@@ -1,25 +1,19 @@
-
 import type { Metadata } from "next";
+import Sidebar from "./components/Sidebar";
 
 export const metadata: Metadata = {
-  title: "Dashboard",
+  title: "Gestion des emprunts d'ordinateur",
 };
 
-
-/**
- * Layout de toutes les pages qui sont dans le dossier (dashboard)
- * @param param0 
- * @returns 
- */
-export default function RootLayout({ children }: Readonly<{children: React.ReactNode; }>) 
-{
-    return (
-        <html lang="fr" >
-            <body   
-                >
-                {children}
-            </body>
-        </html>
-    )
-
+export default function DashboardLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return (
+    <html lang="fr">
+      <body className="flex min-h-screen bg-[#F4F6FA] font-[Inter,sans-serif]">
+        <Sidebar />
+        <main className="flex-1 flex flex-col min-h-screen overflow-x-hidden">
+          {children}
+        </main>
+      </body>
+    </html>
+  );
 }
