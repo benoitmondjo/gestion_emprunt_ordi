@@ -1,4 +1,3 @@
-import Navbar from "../components/Navbar";
 import Link from "next/link";
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
@@ -274,7 +273,6 @@ function DonutChart() {
 export default function Dashboard() {
   return (
     <>
-      <Navbar title="Tableau de bord" subtitle="Bienvenue, Admin" />
 
       <div className="flex-1 p-6 space-y-6">
         {/* Stats */}
