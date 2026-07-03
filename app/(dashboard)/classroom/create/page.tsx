@@ -2,7 +2,7 @@
  * Page pour créer une nouvelle classe
  * @returns 
  */
-export default function CreateSalle() {
+export default function CreateClassroom() {
     return (<>
     
     </>);

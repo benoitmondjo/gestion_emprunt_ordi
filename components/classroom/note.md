@@ -1,0 +1,1 @@
+Tous les composants pour les pages liées aux salles de classes doivent être  dans ce dossier

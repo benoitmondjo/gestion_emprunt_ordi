@@ -1,0 +1,1 @@
+Tous les composants pour les pages liées aux apprenants doivent être  dans ce dossier
