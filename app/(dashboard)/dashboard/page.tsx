@@ -274,160 +274,159 @@ export default function Dashboard() {
   return (
     <>
 
-      <div className="flex-1 p-6 space-y-6">
-        {/* Stats */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-4">
-          {statsCards.map((card) => (
-            <div key={card.label} className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100">
-              <div className={`w-10 h-10 rounded-xl ${card.bg} ${card.color} flex items-center justify-center mb-3`}>
-                {card.icon}
-              </div>
-              <p className="text-xs text-gray-500 font-medium">{card.label}</p>
-              <p className={`text-2xl font-bold mt-0.5 ${card.color}`}>{card.value}</p>
-              <p className="text-[11px] text-gray-400 mt-1">{card.sub}</p>
-            </div>
-          ))}
-        </div>
+        <div className="flex-1 p-2 space-y-6">
 
-        {/* Charts + Activities */}
-        <div className="grid grid-cols-1 xl:grid-cols-3 gap-4">
-          {/* Line chart */}
-          <div className="xl:col-span-1 bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="text-sm font-bold text-gray-800">Emprunts par mois</h2>
-              <select className="text-xs border border-gray-200 rounded-lg px-2 py-1 text-gray-600 bg-white focus:outline-none">
-                <option>Cette année</option>
-                <option>Année précédente</option>
-              </select>
-            </div>
-            <div className="h-[200px]">
-              <LineChart />
-            </div>
-          </div>
-
-          {/* Donut */}
-          <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
-            <h2 className="text-sm font-bold text-gray-800 mb-4">Répartition des ordinateurs par salle</h2>
-            <div className="flex items-center gap-4">
-              <DonutChart />
-              <div className="space-y-1.5 flex-1 min-w-0">
-                {donutSegments.map((seg) => (
-                  <div key={seg.label} className="flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 rounded-full shrink-0" style={{ background: seg.color }} />
-                    <span className="text-[11px] text-gray-600 truncate">{seg.label}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Activités récentes */}
-          <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
-            <h2 className="text-sm font-bold text-gray-800 mb-4">Activités récentes</h2>
-            <div className="space-y-3">
-              {recentActivities.map((act, i) => (
-                <div key={i} className="flex items-start gap-3">
-                  <div className={`w-8 h-8 rounded-lg ${act.bg} ${act.color} flex items-center justify-center shrink-0 mt-0.5`}>
-                    {act.type === "emprunt" && (
-                      <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><polyline points="8 17 12 21 16 17" /><line x1="12" y1="3" x2="12" y2="21" /></svg>
-                    )}
-                    {act.type === "retour" && (
-                      <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><polyline points="16 7 12 3 8 7" /><line x1="12" y1="3" x2="12" y2="21" /></svg>
-                    )}
-                    {act.type === "ordi" && (
-                      <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><rect x="2" y="4" width="20" height="13" rx="2" /><path d="M8 21h8M12 17v4" /></svg>
-                    )}
-                    {act.type === "apprenant" && (
-                      <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" /></svg>
-                    )}
-                    {act.type === "retard" && (
-                      <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" /><line x1="12" y1="9" x2="12" y2="13" /></svg>
-                    )}
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center justify-between gap-2">
-                      <p className="text-xs font-semibold text-gray-800 truncate">{act.title}</p>
-                      <span className="text-[10px] text-gray-400 shrink-0">{act.time}</span>
+            {/* Stats */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                {statsCards.map((card) => (
+                    <div key={card.label} className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100">
+                    <div className={`w-10 h-10 rounded-xl ${card.bg} ${card.color} flex items-center justify-center mb-3`}>
+                        {card.icon}
                     </div>
-                    <p className="text-[11px] text-gray-500 truncate">{act.desc}</p>
-                  </div>
+                    <p className="text-xs text-gray-500 font-medium">{card.label}</p>
+                    <p className={`text-2xl font-bold mt-0.5 ${card.color}`}>{card.value}</p>
+                    <p className="text-[11px] text-gray-400 mt-1">{card.sub}</p>
+                    </div>
+                ))}
+            </div>
+
+
+            {/* Charts + Activities */}
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+            {/* Line chart */}
+            <div className="xl:col-span-1 bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
+                <div className="flex items-center justify-between mb-4">
+                <h2 className="text-sm font-bold text-gray-800">Emprunts par mois</h2>
+                <select className="text-xs border border-gray-200 rounded-lg px-2 py-1 text-gray-600 bg-white focus:outline-none">
+                    <option>Cette année</option>
+                    <option>Année précédente</option>
+                </select>
                 </div>
-              ))}
+                <div className="h-50">
+                <LineChart />
+                </div>
             </div>
-            <Link href="/activites" className="flex items-center gap-1 mt-4 text-xs font-semibold text-[#2FA89E] hover:underline">
-              Voir toutes les activités
-              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><polyline points="9 18 15 12 9 6" /></svg>
-            </Link>
-          </div>
-        </div>
 
-        {/* Derniers emprunts + Raccourcis */}
-        <div className="grid grid-cols-1 xl:grid-cols-3 gap-4">
-          {/* Table emprunts */}
-          <div className="xl:col-span-2 bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
-            <h2 className="text-sm font-bold text-gray-800 mb-4">Derniers emprunts</h2>
-            <div className="overflow-x-auto">
-              <table className="w-full text-xs">
-                <thead>
-                  <tr className="border-b border-gray-100">
-                    {["Apprenant", "Ordinateur", "Salle", "Date d'emprunt", "Date prévue", "Statut"].map((h) => (
-                      <th key={h} className="text-left pb-2 text-gray-400 font-medium pr-4">{h}</th>
+            {/* Donut */}
+            <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
+                <h2 className="text-sm font-bold text-gray-800 mb-4">Répartition des ordinateurs par salle</h2>
+                <div className="flex items-center gap-4">
+                <DonutChart />
+                <div className="space-y-1.5 flex-1 min-w-0">
+                    {donutSegments.map((seg) => (
+                    <div key={seg.label} className="flex items-center gap-2">
+                        <span className="w-2.5 h-2.5 rounded-full shrink-0" style={{ background: seg.color }} />
+                        <span className="text-[11px] text-gray-600 truncate">{seg.label}</span>
+                    </div>
                     ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {dernierEmprunts.map((row, i) => (
-                    <tr key={i} className="border-b border-gray-50 hover:bg-gray-50/50 transition-colors">
-                      <td className="py-3 pr-4 font-medium text-gray-800">{row.apprenant}</td>
-                      <td className="py-3 pr-4 text-gray-600">{row.ordi}</td>
-                      <td className="py-3 pr-4 text-gray-600">{row.salle}</td>
-                      <td className="py-3 pr-4 text-gray-500">{row.dateEmprunt}</td>
-                      <td className="py-3 pr-4 text-gray-500">{row.datePrevue}</td>
-                      <td className="py-3">
-                        <span className={`px-2 py-0.5 rounded-full text-[10px] font-semibold ${
-                          row.statut === "En retard"
-                            ? "bg-red-100 text-red-600"
-                            : "bg-green-100 text-green-600"
-                        }`}>
-                          {row.statut}
-                        </span>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+                </div>
+                </div>
             </div>
-            <Link href="/emprunts" className="flex items-center gap-1 mt-4 text-xs font-semibold text-[#2FA89E] hover:underline">
-              Voir tous les emprunts
-              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><polyline points="9 18 15 12 9 6" /></svg>
-            </Link>
-          </div>
 
-          {/* Raccourcis */}
-          <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
-            <h2 className="text-sm font-bold text-gray-800 mb-4">Raccourcis</h2>
-            <div className="grid grid-cols-3 gap-3">
-              {shortcuts.map((s) => (
-                <Link
-                  key={s.label}
-                  href={s.href}
-                  className="flex flex-col items-center gap-2 p-3 rounded-xl hover:shadow-md transition-all group"
-                >
-                  <div className={`w-11 h-11 rounded-xl ${s.bg} ${s.color} flex items-center justify-center group-hover:scale-110 transition-transform`}>
-                    {s.icon}
-                  </div>
-                  <span className="text-[10px] text-center text-gray-600 leading-tight font-medium">{s.label}</span>
+            {/* Activités récentes */}
+            <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
+                <h2 className="text-sm font-bold text-gray-800 mb-4">Activités récentes</h2>
+                <div className="space-y-3">
+                {recentActivities.map((act, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                    <div className={`w-8 h-8 rounded-lg ${act.bg} ${act.color} flex items-center justify-center shrink-0 mt-0.5`}>
+                        {act.type === "emprunt" && (
+                        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><polyline points="8 17 12 21 16 17" /><line x1="12" y1="3" x2="12" y2="21" /></svg>
+                        )}
+                        {act.type === "retour" && (
+                        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><polyline points="16 7 12 3 8 7" /><line x1="12" y1="3" x2="12" y2="21" /></svg>
+                        )}
+                        {act.type === "ordi" && (
+                        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><rect x="2" y="4" width="20" height="13" rx="2" /><path d="M8 21h8M12 17v4" /></svg>
+                        )}
+                        {act.type === "apprenant" && (
+                        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" /></svg>
+                        )}
+                        {act.type === "retard" && (
+                        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" /><line x1="12" y1="9" x2="12" y2="13" /></svg>
+                        )}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                        <div className="flex items-center justify-between gap-2">
+                        <p className="text-xs font-semibold text-gray-800 truncate">{act.title}</p>
+                        <span className="text-[10px] text-gray-400 shrink-0">{act.time}</span>
+                        </div>
+                        <p className="text-[11px] text-gray-500 truncate">{act.desc}</p>
+                    </div>
+                    </div>
+                ))}
+                </div>
+                <Link href="/activites" className="flex items-center gap-1 mt-4 text-xs font-semibold text-[#2FA89E] hover:underline">
+                Voir toutes les activités
+                <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><polyline points="9 18 15 12 9 6" /></svg>
                 </Link>
-              ))}
             </div>
-          </div>
-        </div>
-      </div>
+            </div>
 
-      {/* Footer */}
-      <footer className="text-center text-[11px] text-gray-400 py-4 border-t border-gray-100 bg-white">
-        © 2024 Gestion des emprunts d'ordinateur. Tous droits réservés.
-      </footer>
+            {/* Derniers emprunts + Raccourcis */}
+            <div className="grid grid-cols-1 xl:grid-cols-3 gap-4">
+            {/* Table emprunts */}
+            <div className="xl:col-span-2 bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
+                <h2 className="text-sm font-bold text-gray-800 mb-4">Derniers emprunts</h2>
+                <div className="overflow-x-auto">
+                <table className="w-full text-xs">
+                    <thead>
+                    <tr className="border-b border-gray-100">
+                        {["Apprenant", "Ordinateur", "Salle", "Date d'emprunt", "Date prévue", "Statut"].map((h) => (
+                        <th key={h} className="text-left pb-2 text-gray-400 font-medium pr-4">{h}</th>
+                        ))}
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {dernierEmprunts.map((row, i) => (
+                        <tr key={i} className="border-b border-gray-50 hover:bg-gray-50/50 transition-colors">
+                        <td className="py-3 pr-4 font-medium text-gray-800">{row.apprenant}</td>
+                        <td className="py-3 pr-4 text-gray-600">{row.ordi}</td>
+                        <td className="py-3 pr-4 text-gray-600">{row.salle}</td>
+                        <td className="py-3 pr-4 text-gray-500">{row.dateEmprunt}</td>
+                        <td className="py-3 pr-4 text-gray-500">{row.datePrevue}</td>
+                        <td className="py-3">
+                            <span className={`px-2 py-0.5 rounded-full text-[10px] font-semibold ${
+                            row.statut === "En retard"
+                                ? "bg-red-100 text-red-600"
+                                : "bg-green-100 text-green-600"
+                            }`}>
+                            {row.statut}
+                            </span>
+                        </td>
+                        </tr>
+                    ))}
+                    </tbody>
+                </table>
+                </div>
+                <Link href="/emprunts" className="flex items-center gap-1 mt-4 text-xs font-semibold text-[#2FA89E] hover:underline">
+                Voir tous les emprunts
+                <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><polyline points="9 18 15 12 9 6" /></svg>
+                </Link>
+            </div>
+
+            {/* Raccourcis */}
+            <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
+                <h2 className="text-sm font-bold text-gray-800 mb-4">Raccourcis</h2>
+                <div className="grid grid-cols-3 gap-3">
+                {shortcuts.map((s) => (
+                    <Link
+                    key={s.label}
+                    href={s.href}
+                    className="flex flex-col items-center gap-2 p-3 rounded-xl hover:shadow-md transition-all group"
+                    >
+                    <div className={`w-11 h-11 rounded-xl ${s.bg} ${s.color} flex items-center justify-center group-hover:scale-110 transition-transform`}>
+                        {s.icon}
+                    </div>
+                    <span className="text-[10px] text-center text-gray-600 leading-tight font-medium">{s.label}</span>
+                    </Link>
+                ))}
+                </div>
+            </div>
+            </div>
+        </div>
+
+        
     </>
   );
 }

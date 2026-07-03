@@ -2,6 +2,7 @@
 
 import Sidebar from "./Sidebar";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 import { useState } from "react";
 
@@ -21,6 +22,8 @@ export default function MainLayout({children} : {children: React.ReactNode}){
                 <main className="h-auto overflow-y-auto px-2 md:px-6 pt-20">
                     {children}
                 </main>
+                
+                <Footer />
             </div>
         </div>
     )
