@@ -1,6 +1,6 @@
 
 import { FaUser, FaEnvelope, FaLock } from "react-icons/fa";
-import Input from "./Input";
+import Input from "../auth/Input";
 export default function RigthPart() {
   return (
     

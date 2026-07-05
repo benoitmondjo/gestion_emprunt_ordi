@@ -1,1 +1,0 @@
-Tous les composants liées à l'authentification: login, etc. doivent être ici.
