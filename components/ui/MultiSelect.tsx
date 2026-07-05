@@ -2,19 +2,35 @@
 
 import { useEffect, useRef, useState } from "react";
 
+/**
+ * Une option proposée dans le multi-select.
+ */
 interface MultiSelectOption {
   value: string;
   label: string;
 }
 
+/**
+ * Props attendues par le composant MultiSelect.
+ */
 interface MultiSelectProps {
+  /** Label optionnel affiché au-dessus du champ */
   label?: string;
+  /** Liste des valeurs actuellement sélectionnées */
   values: string[];
+  /** Fonction appelée à chaque ajout/retrait d'une option */
   onChange: (values: string[]) => void;
+  /** Liste de toutes les options disponibles */
   options: MultiSelectOption[];
+  /** Texte affiché quand rien n'est sélectionné */
   placeholder?: string;
 }
 
+/**
+ * Champ multi-select réutilisable : un bouton qui ouvre un menu déroulant
+ * avec des cases à cocher, permettant de sélectionner plusieurs options.
+ * Composant contrôlé : values et onChange viennent du parent.
+ */
 export default function MultiSelect({
   label,
   values,
@@ -22,9 +38,17 @@ export default function MultiSelect({
   options,
   placeholder = "Sélectionner...",
 }: MultiSelectProps) {
+<<<<<<< HEAD
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
+=======
+  // State local : menu ouvert ou fermé
+  const [open, setOpen] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Ferme le menu si clic en dehors du composant
+>>>>>>> e3f411d (feat: maquette Ajouter une nouvelle salle (composants, responsive))
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
@@ -35,6 +59,10 @@ export default function MultiSelect({
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+<<<<<<< HEAD
+=======
+  /** Ajoute ou retire une valeur de la sélection */
+>>>>>>> e3f411d (feat: maquette Ajouter une nouvelle salle (composants, responsive))
   function toggleValue(value: string) {
     if (values.includes(value)) {
       onChange(values.filter((v) => v !== value));
@@ -43,6 +71,10 @@ export default function MultiSelect({
     }
   }
 
+<<<<<<< HEAD
+=======
+  // Libellés des valeurs sélectionnées pour affichage dans le bouton
+>>>>>>> e3f411d (feat: maquette Ajouter une nouvelle salle (composants, responsive))
   const selectedLabels = options
     .filter((opt) => values.includes(opt.value))
     .map((opt) => opt.label);
@@ -54,6 +86,11 @@ export default function MultiSelect({
           {label}
         </label>
       )}
+<<<<<<< HEAD
+=======
+
+      {/* Bouton fermé : affiche les éléments sélectionnés ou le placeholder */}
+>>>>>>> e3f411d (feat: maquette Ajouter une nouvelle salle (composants, responsive))
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
@@ -65,6 +102,10 @@ export default function MultiSelect({
         <span className="ml-2 text-gray-400 shrink-0">▾</span>
       </button>
 
+<<<<<<< HEAD
+=======
+      {/* Menu déroulant avec cases à cocher */}
+>>>>>>> e3f411d (feat: maquette Ajouter une nouvelle salle (composants, responsive))
       {open && (
         <div className="absolute z-10 mt-1 w-full bg-white border border-gray-200 rounded-lg shadow-md max-h-56 overflow-auto">
           {options.map((opt) => (
