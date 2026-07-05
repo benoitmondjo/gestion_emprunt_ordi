@@ -3,6 +3,10 @@ import LeftPart from "@/components/login/LeftPart"
 import RigthPart from "@/components/login/RigthPart"
 
 
+/**
+ * Page de connexion
+ * @returns 
+ */
 export default function Login() {
   
     return (
