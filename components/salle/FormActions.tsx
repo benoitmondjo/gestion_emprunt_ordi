@@ -13,8 +13,12 @@ interface FormActionsProps {
 
 /**
  * Barre d'actions en bas du formulaire : bouton "Annuler" + bouton de confirmation.
- * Le texte du bouton est paramétrable via labelConfirm, ce qui permet de
- * réutiliser ce composant pour "Créer la salle" ET "Enregistrer les modifications".
+ *
+ * Le texte du bouton de confirmation est paramétrable via `labelConfirm`,
+ * ce qui permet de réutiliser ce composant pour :
+ * - "Créer la salle" (page create)
+ * - "Enregistrer les modifications" (page edit)
+ * sans dupliquer de code.
  */
 export default function FormActions({
   labelConfirm,
@@ -26,6 +30,10 @@ export default function FormActions({
     <div className="flex justify-end gap-3 pt-2">
 
       {/* Bouton secondaire : Annuler */}
+    /* Aligné à droite, avec un espace entre les deux boutons */
+    <div className="flex justify-end gap-3 pt-2">
+
+      {/* Bouton secondaire : Annuler (contour gris, fond blanc) */}
       <button
         type="button"
         onClick={onCancel}
@@ -34,7 +42,7 @@ export default function FormActions({
         Annuler
       </button>
 
-      {/* Bouton principal : confirmation (couleur primary = teal) */}
+      {/* Bouton principal : confirmation (fond teal = couleur primary du projet) */}
       <button
         type="button"
         onClick={onConfirm}
