@@ -1,6 +1,16 @@
 "use client";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Dispatch, SetStateAction } from "react";
+
+import { MdOutlineDesktopWindows } from "react-icons/md";
+import { IoCloseSharp } from "react-icons/io5";
+
+type ChildProps = {
+  sidbarOpen: boolean;
+  setSidebarOpen: Dispatch<SetStateAction<boolean>>;
+};
 
 const navItems = [
   {
@@ -81,60 +91,62 @@ const navItems = [
   },
 ];
 
-export default function Sidebar() {
-  const pathname = usePathname();
+export default function Sidebar({sidbarOpen, setSidebarOpen}: ChildProps) {
+    const pathname = usePathname();
 
-  return (
-    <aside className="w-[220px] min-h-screen bg-[#2FA89E] flex flex-col text-white shrink-0">
-      {/* Logo */}
-      <div className="px-5 py-6 flex items-center gap-3 border-b border-white/20">
-        <div className="w-9 h-9 bg-white/20 rounded-lg flex items-center justify-center">
-          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="white" strokeWidth={2}>
-            <rect x="2" y="4" width="20" height="13" rx="2" /><path d="M8 21h8M12 17v4" />
-          </svg>
-        </div>
-        <div className="leading-tight">
-          <p className="text-[11px] font-medium text-white/80">Gestion des</p>
-          <p className="text-[11px] font-semibold">emprunts d'ordinateur</p>
-        </div>
-      </div>
+    return (
+        <aside className={`w-55 bg-primary flex flex-col text-white shrink-0 fixed top-0 left-0 bottom-0 lg:static lg:translate-x-0 transition-all duration-500  z-50  ${sidbarOpen ? "translate-x-0" : "-translate-x-55"}`}>
+        
+            {/* Logo */}
+            <div className="px-4 py-6 flex items-center gap-3 border-b border-white/20">
+                <div className="w-9 h-9 px-2 bg-white/20 rounded-lg flex items-center justify-center cursor-pointer">
+                    <MdOutlineDesktopWindows className=" h-6 w-6 rounded-lg " />
+                </div>
+                <div className="leading-tight">
+                    <p className="text-[11px] font-medium text-white/80">Gestion des</p>
+                    <p className="text-[11px] font-semibold">emprunts d'ordinateur</p>
+                </div>
+                <button onClick={()=> setSidebarOpen(false)} className="bg-white/20 rounded-lg cursor-pointer px-1 py-1 lg:hidden">
+                    <IoCloseSharp className="text-3xl" />
+                </button>
+            </div>
 
-      {/* Nav */}
-      <nav className="flex-1 py-4 px-3">
-        <ul className="space-y-1">
-          {navItems.map((item) => {
-            const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
-            return (
-              <li key={item.href}>
+            {/* Nav */}
+            <nav className="flex-1 py-4 px-3">
+                <ul className="space-y-1">
+                {navItems.map((item) => {
+                    const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
+                    return (
+                    <li key={item.href}>
+                        <Link
+                        href={item.href}
+                        className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all ${
+                            isActive
+                            ? "bg-white text-[#2FA89E]"
+                            : "text-white/85 hover:bg-white/15"
+                        }`}
+                        >
+                        <span className={isActive ? "text-[#2FA89E]" : "text-white/85"}>{item.icon}</span>
+                        {item.label}
+                        </Link>
+                    </li>
+                    );
+                })}
+                </ul>
+            </nav>
+
+            {/* Déconnexion */}
+            <div className="px-3 py-4 border-t border-white/20">
                 <Link
-                  href={item.href}
-                  className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all ${
-                    isActive
-                      ? "bg-white text-[#2FA89E]"
-                      : "text-white/85 hover:bg-white/15"
-                  }`}
+                href="/login"
+                className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-white/85 hover:bg-white/15 transition-all"
                 >
-                  <span className={isActive ? "text-[#2FA89E]" : "text-white/85"}>{item.icon}</span>
-                  {item.label}
+                <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9" />
+                </svg>
+                Déconnexion
                 </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </nav>
-
-      {/* Déconnexion */}
-      <div className="px-3 py-4 border-t border-white/20">
-        <Link
-          href="/login"
-          className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-white/85 hover:bg-white/15 transition-all"
-        >
-          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9" />
-          </svg>
-          Déconnexion
-        </Link>
-      </div>
-    </aside>
-  );
+            </div>
+        </aside>
+    );
 }
