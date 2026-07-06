@@ -1,4 +1,4 @@
-
+import Link from "next/link"; 
 //On importe les icônes de la bibliothèque react-icon
 import { FiEdit3, FiTrash2} from "react-icons/fi";
 import { PiDoorOpen } from "react-icons/pi";

@@ -2,10 +2,11 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import PageBreadcrumb from "@/components/salle/PageBreadcrumb";
-import InformationsGenerales from "@/components/salle/InformationsGenerales";
-import EquipementsCapacite from "@/components/salle/EquipementsCapacite";
-import FormActions from "@/components/salle/FormActions";
+import PageBreadcrumb from "@/components/classroom/PageBreadcrumb";
+import InformationsGenerales from "@/components/classroom/InformationsGenerales";
+import EquipementsCapacite from "@/components/classroom/EquipementsCapacite";
+import FormActions from "@/components/classroom/FormActions";
+
 
 /**
  * Page pour modifier une salle existante (classroom).
