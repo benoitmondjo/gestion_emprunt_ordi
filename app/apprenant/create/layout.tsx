@@ -1,12 +1,13 @@
+
 import type { Metadata } from "next";
-import "@/style/globals.css";
 
 export const metadata: Metadata = {
-  title: "login",
+  title: "Apprenant",
 };
 
+
 /**
- * Layout de toutes les pages liées à l'authentification
+ * Layout de toutes les pages qui sont dans le dossier (dashboard)
  * @param param0 
  * @returns 
  */
@@ -14,9 +15,11 @@ export default function RootLayout({ children }: Readonly<{children: React.React
 {
     return (
         <html lang="fr" >
-            <body>
+            <body   
+                >
                 {children}
             </body>
         </html>
     )
+
 }

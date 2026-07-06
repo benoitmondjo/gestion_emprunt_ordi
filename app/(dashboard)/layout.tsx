@@ -1,25 +1,20 @@
+import "@/style/globals.css";
+import MainLayout from "@/components/Layouts/MainLayout";
 
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Dashboard",
+  title: "Gestion des emprunts d'ordinateur",
 };
 
+export default function DashboardLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+    
 
-/**
- * Layout de toutes les pages qui sont dans le dossier (dashboard)
- * @param param0 
- * @returns 
- */
-export default function RootLayout({ children }: Readonly<{children: React.ReactNode; }>) 
-{
     return (
-        <html lang="fr" >
-            <body   
-                >
-                {children}
-            </body>
+        <html lang="fr">
+        <body className="bg-light font-inter">
+            <MainLayout children={children} />
+        </body>
         </html>
-    )
-
+    );
 }
