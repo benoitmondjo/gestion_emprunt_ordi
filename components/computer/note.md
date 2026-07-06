@@ -1,0 +1,1 @@
+Tous les composants pour les pages liées aux prdinateurs doivent être  dans ce dossier.
