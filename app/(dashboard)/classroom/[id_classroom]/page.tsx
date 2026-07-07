@@ -25,7 +25,7 @@ export default function ShowClassroom() {
     <>
       <PageBreadcrumb2
         items={[
-          { label: "Salles", href: "/dashboard/classroom" },
+          { label: "Salles", href: "/classroom" },
           { label: "Détail de la salle" },
         ]}
       />
@@ -34,9 +34,9 @@ export default function ShowClassroom() {
         title="Salle 101"
         subtitle="Détails et équipements de la salle"
         onModifierClick={() =>
-          router.push(`/dashboard/classroom/edit/${id_classroom}`)
+          router.push(`/classroom/edit/${id_classroom}`)
         }
-        onRetourClick={() => router.push("/dashboard/classroom")}
+        onRetourClick={() => router.push("/classroom")}
       />
     </>
   );
