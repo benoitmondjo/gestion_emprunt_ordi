@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "@/style/globals.css";
 
 export const metadata: Metadata = {
   title: "login",
@@ -13,12 +14,9 @@ export default function RootLayout({ children }: Readonly<{children: React.React
 {
     return (
         <html lang="fr" >
-            <body   
-                >
-                    
+            <body>
                 {children}
             </body>
         </html>
     )
-
 }
