@@ -1,6 +1,6 @@
 
-import LeftPart from "@/components/login/LeftPart"
-import RigthPart from "@/components/login/RigthPart"
+import LeftPart from "@/components/auth/LeftPart"
+import RigthPart from "@/components/auth/RigthPart"
 
 
 /**
