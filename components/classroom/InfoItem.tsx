@@ -18,7 +18,7 @@ export default function InfoItem({
 }: InfoItemProps) {
   return (
     <div>
-      <p className="flex items-center gap-1.5 text-xs text-(--texte-gray-1) font-inter mb-1">
+      <p className="flex items-center gap-1.5 text-xs text-(--texte-gray-1) font-inter mb-1 ">
         <Icon className="w-3.5 h-3.5" />
         {label}
       </p>

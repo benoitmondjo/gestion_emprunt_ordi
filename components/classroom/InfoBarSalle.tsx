@@ -29,7 +29,7 @@ export default function InfoBarSalle({
   const isActive = statut.toLowerCase() === "active";
 
   return (
-    <div className="flex flex-col sm:flex-row sm:items-center gap-6 border border-gray-200 rounded-xl p-6 mb-6">
+    <div className="flex flex-col sm:flex-row sm:items-center gap-6 border border-gray-200 rounded-xl p-6 mb-6 bg-white">
       {/* Icône principale dans un cercle */}
       <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
         <Icon className="w-7 h-7 text-primary" />

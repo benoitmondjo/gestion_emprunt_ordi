@@ -10,6 +10,7 @@ import HeaderSalleDetail from "@/components/classroom/HeaderSalleDetail";
 import InfoBarSalle from "@/components/classroom/InfoBarSalle";
 import InformationsGeneralesClasse from "@/components/classroom/InformationsGeneralesClasse";
 import ResumeEquipements from "@/components/classroom/ResumeEquipements";
+import TableOrdinateurs from "@/components/computer/TableOrdinateurs";
 
 
 /**
@@ -83,6 +84,29 @@ export default function ShowClassroom() {
             souris={salle.equipements.souris}
             />
         </div>
+        <TableOrdinateurs
+        ordinateurs={[
+            { code: "PC-101-01", nom: "PC-101-01", statut: "Disponible" },
+            { code: "PC-101-02", nom: "PC-101-02", statut: "Disponible" },
+            {
+            code: "PC-101-03",
+            nom: "PC-101-03",
+            statut: "Emprunté",
+            emprunteur: "Dupont Marie",
+            dateEmprunt: "21/05/2024",
+            },
+            { code: "PC-101-04", nom: "PC-101-04", statut: "Disponible" },
+            { code: "PC-101-05", nom: "PC-101-05", statut: "Disponible" },
+            {
+            code: "PC-101-03",
+            nom: "PC-101-03",
+            statut: "Emprunté",
+            emprunteur: "Clémence Boisier",
+            dateEmprunt: "10/05/2026",
+            },
+            
+        ]}
+        />
     </>
   );
 }
