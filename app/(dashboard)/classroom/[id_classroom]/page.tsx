@@ -7,6 +7,7 @@ import { useRouter, useParams } from "next/navigation";
 // On importe les composants 
 import PageBreadcrumb2 from "@/components/classroom/PageBreadcrumb2";
 import HeaderSalleDetail from "@/components/classroom/HeaderSalleDetail";
+import InfoBarSalle from "@/components/classroom/InfoBarSalle";
 
 
 
@@ -23,13 +24,14 @@ export default function ShowClassroom() {
 
   return (
     <>
-      <PageBreadcrumb2
+
+    <PageBreadcrumb2
         items={[
           { label: "Salles", href: "/classroom" },
           { label: "Détail de la salle" },
         ]}
-      />
-      <HeaderSalleDetail
+    />
+    <HeaderSalleDetail
         icon={FiHome}
         title="Salle 101"
         subtitle="Détails et équipements de la salle"
@@ -37,7 +39,16 @@ export default function ShowClassroom() {
           router.push(`/classroom/edit/${id_classroom}`)
         }
         onRetourClick={() => router.push("/classroom")}
-      />
+    />
+    <InfoBarSalle
+        icon={FiHome}
+        capacite={30}
+        type="Salle de classe"
+        etage="1er étage"
+        statut="Active"
+        creeeLe="12/03/2024"
+    />
+
     </>
   );
 }
