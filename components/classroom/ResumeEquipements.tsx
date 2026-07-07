@@ -20,7 +20,7 @@ export default function ResumeEquipements({
   souris,
 }: ResumeEquipementsProps) {
   return (
-    <div className="border border-gray-200 rounded-xl p-6">
+    <div className="border border-gray-200 rounded-xl p-6 bg-white">
       <h2 className="text-primary font-semibold font-roboto mb-4">
         Résumé des équipements
       </h2>

@@ -21,7 +21,7 @@ export default function HeaderSalleDetail({
   onRetourClick,
 }: HeaderSalleDetailProps) {
   return (
-    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-6">
+    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-6 ">
       {/* Partie gauche : icône dans un cercle + titre/sous-titre */}
       <div className="flex items-center gap-4">
         <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
@@ -39,7 +39,7 @@ export default function HeaderSalleDetail({
       <div className="flex items-center gap-3">
         <button
           onClick={onModifierClick}
-          className="flex items-center gap-2 border border-gray-200 shadow-sm hover:bg-gray-50 text-gray-900 px-4 py-2 rounded-lg text-sm font-medium font-inter cursor-pointer"
+          className="flex items-center gap-2 border bg-white border-gray-200 shadow-sm hover:bg-gray-50 text-gray-900 px-4 py-2 rounded-lg text-sm font-medium font-inter cursor-pointer"
         >
           <FiEdit2 />
           Modifier

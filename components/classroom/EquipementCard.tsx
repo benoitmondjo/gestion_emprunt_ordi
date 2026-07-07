@@ -19,7 +19,7 @@ export default function EquipementCard({
   label,
 }: EquipementCardProps) {
   return (
-    <div className="border border-gray-200 rounded-xl p-4 flex flex-col items-center text-center gap-2">
+    <div className="border border-gray-200 rounded-xl p-4 flex flex-col items-center text-center gap-2 ">
       <div
         className={`w-12 h-12 rounded-full flex items-center justify-center ${iconBgColor}`}
       >
