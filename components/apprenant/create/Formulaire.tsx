@@ -30,8 +30,6 @@ export default function Formulaire ({buttonText}:FormulaireProps){
         </div>
 
 
-           
-
 
     
     )

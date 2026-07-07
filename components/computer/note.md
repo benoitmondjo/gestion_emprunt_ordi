@@ -1,1 +1,11 @@
-Tous les composants pour les pages liées aux prdinateurs doivent être  dans ce dossier.
+
+
+import React from 'react';
+
+export default function(){
+
+
+    return(
+
+    )
+}
