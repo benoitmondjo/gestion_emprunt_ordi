@@ -76,11 +76,7 @@ const apprenants: Apprenant[] = [
 const ITEMS_PER_PAGE = 3;
    
 /**
-<<<<<<< HEAD
- * Page qui affiche tous les apprenants de chaque salles de classes
-=======
  * Page qui affiche tous les apprenants
->>>>>>> 815455a (Création de la page liste des salles ainsi que ses composants)
  * @returns 
 */
 export default function AllStudents() {
