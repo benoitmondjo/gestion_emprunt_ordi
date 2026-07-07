@@ -1,7 +1,11 @@
+/**
+ * Page pour créer un nouveau apprenant 
+ * @returns 
+ */
 
 
-import PageTitle from "@/components/apprenant/create/PageTitle"
-import Formulaire from "@/components/apprenant/create/Formulaire"
+import PageTitle from "@/components/student/create&edit/PageTitle"
+import Formulaire from "@/components/student/create&edit/Formulaire"
 import "@/style/globals.css"
 
 export default function AjouterApprenant (){
