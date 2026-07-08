@@ -1,7 +1,6 @@
 //On importe l'icône plus de react-icons
 import { FiPlus } from "react-icons/fi";
-//On importe le style 
-import "@/style/globals.css"
+import Link from "next/link"
 
 // On définit le typage des props attendues
 interface HeaderProps {
@@ -19,13 +18,13 @@ export default function HeaderStudent({ title, subtitle, buttonLabel, onButtonCl
                 <h1 className="text-3xl font-bold text-gray-900 font-roboto">{title}</h1>
                 <p className="text-sm text-gray-1 font-inter">{subtitle}</p>
             </div>
-            <button
+            <Link href={`/student/create`}
                 onClick={onButtonClick}
                 className="flex items-center gap-2 bg-primary shadow hover:opacity-90 text-white px-4 py-2 rounded-lg text-sm font-medium font-inter cursor-pointer"
             >
                 <FiPlus />
                 {buttonLabel}
-            </button>
+            </Link>
         </div>
     )
 }

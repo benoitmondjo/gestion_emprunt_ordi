@@ -1,6 +1,5 @@
 import { FiEdit3, FiTrash2 } from "react-icons/fi";
-import "@/style/globals.css";
-import "tailwindcss";
+import Link from "next/link";
 
 // Structure d'un apprenant
 export interface Apprenant {
@@ -38,7 +37,7 @@ export default function TableStudent({ apprenants, onEdit, onDelete }: TableAppr
 
                 <tbody>
                     {apprenants.map((apprenant) => (
-                        <tr key={apprenant.id} className="border-b border-gray-50 shadow cursor-pointer hover:bg-gray-50 duration-500">
+                        <tr key={apprenant.id} className="border-b border-gray-50 shadow  hover:bg-gray-200 duration-100">
                             <td className="px-4 py-4 font-medium text-gray-900 truncate">{apprenant.nomComplet}</td>
                             <td className="px-4 py-4 text-gray-1 truncate">{apprenant.matricule}</td>
                             <td className="px-4 py-4 text-gray-1 truncate">{apprenant.groupe}</td>
@@ -58,9 +57,9 @@ export default function TableStudent({ apprenants, onEdit, onDelete }: TableAppr
                             </td>
                             <td className="px-4 py-4">
                                 <div className="flex gap-2">
-                                    <button onClick={() => onEdit?.(apprenant)} className="p-2 rounded-lg bg-gray-50 cursor-pointer hover:bg-gray-100">
+                                    <Link href={`/student/edit`} onClick={() => onEdit?.(apprenant)} className="p-2 rounded-lg bg-gray-50 cursor-pointer hover:bg-gray-100">
                                         <FiEdit3 className="text-gray-1 w-4 h-4" />
-                                    </button>
+                                    </Link>
                                     <button onClick={() => onDelete?.(apprenant)} className="p-2 rounded-lg bg-red-50 cursor-pointer hover:bg-red-100">
                                         <FiTrash2 className="text-red-500 w-4 h-4" />
                                     </button>
