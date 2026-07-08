@@ -11,6 +11,17 @@ import PaginationOrdinateurs from "@/components/computer/PaginationOrdinateurs";
  * @returns 
  */
 
+// Données mockées en attendant le branchement API/Prisma
+const tousLesOrdinateurs = [
+  { nom: "PC-001", categorie: "Portable", numeroSerie: "SN-LEN-2024-0001", statut: "Disponible" as const, localisation: "Salle Info 1" },
+  { nom: "PC-002", categorie: "Portable", numeroSerie: "SN-LEN-2024-0002", statut: "En prêt" as const },
+  { nom: "PC-003", categorie: "Fixe", numeroSerie: "SN-HP-2024-0003", statut: "Disponible" as const, localisation: "Salle Info 2" },
+  { nom: "PC-004", categorie: "Portable", numeroSerie: "SN-DELL-2024-0004", statut: "En maintenance" as const, localisation: "Atelier" },
+  { nom: "PC-005", categorie: "Fixe", numeroSerie: "SN-HP-2024-0005", statut: "Disponible" as const, localisation: "Bureau 3" },
+  { nom: "PC-006", categorie: "Portable", numeroSerie: "SN-LEN-2024-0006", statut: "En prêt" as const },
+  { nom: "PC-007", categorie: "Portable", numeroSerie: "SN-ASUS-2024-0007", statut: "Disponible" as const, localisation: "Salle Info 1" },
+  { nom: "PC-008", categorie: "Fixe", numeroSerie: "SN-HP-2024-0008", statut: "Hors service" as const, localisation: "Dépôt" },
+];
 export default function AllComputer() {
  
      // États des filtres
@@ -21,17 +32,6 @@ export default function AllComputer() {
   const [currentPage, setCurrentPage] = useState(1);
   const pageSize = 8;
 
-  // Données mockées en attendant le branchement API/Prisma
-  const tousLesOrdinateurs = [
-    { nom: "PC-001", categorie: "Portable", numeroSerie: "SN-LEN-2024-0001", statut: "Disponible" as const, localisation: "Salle Info 1" },
-    { nom: "PC-002", categorie: "Portable", numeroSerie: "SN-LEN-2024-0002", statut: "En prêt" as const },
-    { nom: "PC-003", categorie: "Fixe", numeroSerie: "SN-HP-2024-0003", statut: "Disponible" as const, localisation: "Salle Info 2" },
-    { nom: "PC-004", categorie: "Portable", numeroSerie: "SN-DELL-2024-0004", statut: "En maintenance" as const, localisation: "Atelier" },
-    { nom: "PC-005", categorie: "Fixe", numeroSerie: "SN-HP-2024-0005", statut: "Disponible" as const, localisation: "Bureau 3" },
-    { nom: "PC-006", categorie: "Portable", numeroSerie: "SN-LEN-2024-0006", statut: "En prêt" as const },
-    { nom: "PC-007", categorie: "Portable", numeroSerie: "SN-ASUS-2024-0007", statut: "Disponible" as const, localisation: "Salle Info 1" },
-    { nom: "PC-008", categorie: "Fixe", numeroSerie: "SN-HP-2024-0008", statut: "Hors service" as const, localisation: "Dépôt" },
-  ];
 
   // Filtrage selon recherche, catégorie et statut
   const ordinateursFiltres = useMemo(() => {
