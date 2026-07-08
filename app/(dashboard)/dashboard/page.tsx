@@ -399,7 +399,7 @@ export default function Dashboard() {
                     </tbody>
                 </table>
                 </div>
-                <Link href="/emprunts" className="flex items-center gap-1 mt-4 text-xs font-semibold text-[#2FA89E] hover:underline">
+                <Link href="/loan" className="flex items-center gap-1 mt-4 text-xs font-semibold text-[#2FA89E] hover:underline">
                 Voir tous les emprunts
                 <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><polyline points="9 18 15 12 9 6" /></svg>
                 </Link>
