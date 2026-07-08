@@ -1,0 +1,1 @@
+Tous les composants pour les pages liées aux emprunts des ordinateurs doivent être  dans ce dossier.
