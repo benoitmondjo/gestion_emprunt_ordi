@@ -24,17 +24,20 @@ export default function FiltresOrdinateurs({
 }: FiltresOrdinateursProps) {
   return (
     <div className="flex flex-col md:flex-row gap-3 mb-4">
-      {/* Champ de recherche */}
-      <div className="relative flex-1">
-        <FiSearch className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-(--texte-gray-1)" />
-        <input
-          type="text"
-          value={search}
-          onChange={(e) => onSearchChange(e.target.value)}
-          placeholder="Rechercher un ordinateur..."
-          className="w-full pl-9 pr-3 py-2.5 border border-gray-200 rounded-lg text-sm font-inter focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
-        />
-      </div>
+     {/* Champ de recherche */}
+    <div className="flex-1 ">
+        <label className="invisible block text-xs font-inter mb-1">Recherche</label>
+        <div className="relative ">
+            <FiSearch className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-(--texte-gray-1)" />
+            <input
+            type="text"
+            value={search}
+            onChange={(e) => onSearchChange(e.target.value)}
+            placeholder="Rechercher un ordinateur..."
+            className="w-full pl-9 pr-3 py-2.5 border border-gray-200 rounded-lg text-sm font-inter focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
+            />
+        </div>
+    </div>
 
       {/* Select Catégorie */}
       <div>

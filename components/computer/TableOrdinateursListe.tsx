@@ -30,7 +30,7 @@ export default function TableOrdinateursListe({
 }: TableOrdinateursListeProps) {
   return (
     <div className="overflow-x-auto border border-gray-200 rounded-xl">
-      <table className="w-full min-w-200 table-fixed">
+      <table className="w-full min-w-200 table-fixed bg-white">
         <thead>
           <tr className="border-b border-gray-200 text-left bg-gray-50">
             <th className="w-40 py-3 px-2 text-xs font-medium text-(--texte-gray-1) font-inter">
