@@ -25,7 +25,7 @@ const navItems = [
   },
   {
     label: "Ordinateurs",
-    href: "/ordinateurs",
+    href: "/computer",
     icon: (
       <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
         <rect x="2" y="4" width="20" height="13" rx="2" /><path d="M8 21h8M12 17v4" />
@@ -34,7 +34,7 @@ const navItems = [
   },
   {
     label: "Emprunts",
-    href: "/emprunts",
+    href: "/loan",
     icon: (
       <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
         <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2" />
@@ -44,7 +44,7 @@ const navItems = [
   },
   {
     label: "Apprenants",
-    href: "/apprenants",
+    href: "/student",
     icon: (
       <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
         <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" />
@@ -54,41 +54,41 @@ const navItems = [
   },
   {
     label: "Salles",
-    href: "/salle",
+    href: "/classroom",
     icon: (
       <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
         <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" /><polyline points="9 22 9 12 15 12 15 22" />
       </svg>
     ),
   },
-  {
-    label: "Utilisateurs",
-    href: "/utilisateurs",
-    icon: (
-      <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <circle cx="12" cy="8" r="4" /><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
-      </svg>
-    ),
-  },
-  {
-    label: "Rapports",
-    href: "/rapports",
-    icon: (
-      <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path d="M18 20V10M12 20V4M6 20v-6" />
-      </svg>
-    ),
-  },
-  {
-    label: "Paramètres",
-    href: "/parametres",
-    icon: (
-      <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <circle cx="12" cy="12" r="3" />
-        <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" />
-      </svg>
-    ),
-  },
+//   {
+//     label: "Utilisateurs",
+//     href: "",
+//     icon: (
+//       <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+//         <circle cx="12" cy="8" r="4" /><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+//       </svg>
+//     ),
+//   },
+//   {
+//     label: "Rapports",
+//     href: "",
+//     icon: (
+//       <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+//         <path d="M18 20V10M12 20V4M6 20v-6" />
+//       </svg>
+//     ),
+//   },
+//   {
+//     label: "Paramètres",
+//     href: "",
+//     icon: (
+//       <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+//         <circle cx="12" cy="12" r="3" />
+//         <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" />
+//       </svg>
+//     ),
+//   },
 ];
 
 export default function Sidebar({sidbarOpen, setSidebarOpen}: ChildProps) {
@@ -114,10 +114,10 @@ export default function Sidebar({sidbarOpen, setSidebarOpen}: ChildProps) {
             {/* Nav */}
             <nav className="flex-1 py-4 px-3">
                 <ul className="space-y-1">
-                {navItems.map((item) => {
+                {navItems.map((item,index) => {
                     const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
                     return (
-                    <li key={item.href}>
+                    <li key={index}>
                         <Link
                         href={item.href}
                         className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all ${
@@ -138,7 +138,7 @@ export default function Sidebar({sidbarOpen, setSidebarOpen}: ChildProps) {
             {/* Déconnexion */}
             <div className="px-3 py-4 border-t border-white/20">
                 <Link
-                href="/login"
+                href="/"
                 className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-white/85 hover:bg-white/15 transition-all"
                 >
                 <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

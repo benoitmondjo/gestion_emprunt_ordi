@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Dispatch, SetStateAction } from "react";
-
+import Link from "next/link"
 import { FaBars } from "react-icons/fa6";
 
 
@@ -50,7 +50,7 @@ export default function Navbar({ sidbarOpen , setSidebarOpen, title, subtitle }:
                 <a href="#" className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Mon profil</a>
                 <a href="#" className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Paramètres</a>
                 <hr className="my-1 border-gray-100" />
-                <a href="/login" className="flex items-center gap-2 px-4 py-2 text-sm text-red-500 hover:bg-red-50">Déconnexion</a>
+                <Link href="/" className="flex items-center gap-2 px-4 py-2 text-sm text-red-500 hover:bg-red-50">Déconnexion</Link>
                 </div>
             )}
             </div>
