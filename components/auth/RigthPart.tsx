@@ -1,44 +1,47 @@
-
+"use client";
+import { useRouter } from "next/navigation";
 import { FaUser, FaEnvelope, FaLock } from "react-icons/fa";
 import Input from "./Input";
-export default function RigthPart() {
-  return (
+import SubmitBtn from "../ui/SubmitBtn";
+
+export default function RigthPart({className}:{className?: string}) {
+
+    const router = useRouter();
+
+    const handleSubmit = async (
+        e: React.FormEvent<HTMLFormElement>
+    ) => {
+        e.preventDefault();
+        
+        router.push("/dashboard");
+    };
+
+    return (
     
+      <div className={`w-full md:w-1/2 flex justify-center items-center px-3`}>
 
-      <div className="w-1/2 flex justify-center items-center">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-3">
 
-        <div className="max-w-[500px]">
+                <h2 className="text-4xl font-bold text-primary text-center mb-10">
+                    Veuillez vous connecter
+                </h2>
 
-          <h2 className="text-5xl font-bold text-primary text-center mb-10">
-            Veuillez vous connecter
-          </h2>
-
-          <div className="border rounded-xl flex items-center p-4 mb-5">
-            <FaEnvelope className="text-primary mr-4" />
                 <Input 
                     type="email"
-                    placeholder="Entrez votre adresse mail"
-                />
-           
-          </div>
-
-          <div className="border rounded-xl flex items-center p-4 mb-5">
-            <FaLock className="text-primary mr-4" />
-
-            <Input 
-                    type="password"
                     placeholder="Entrez votre mot de passe"
+                    classe={`text-gray-600`}
                 />
-                
-          </div>
+            
+                <Input 
+                    type="password"
+                    placeholder="Entrez votre email"
+                    classe={`text-gray-600`}
+                />
 
-          <button className="w-full bg-primary text-white py-4 rounded-xl">
-            Connexion
-          </button>
+                <SubmitBtn label='connexion' className={`bg-primary text-white`} />
 
-        </div>
+            </form>
 
       </div>
-
-  );
+    );
 }

@@ -6,6 +6,7 @@ import TableSalle from "@/components/classroom/TableSalle";
 import HeaderSalle from "@/components/classroom/HeaderSalle";
 import SearchBarSalle from "@/components/classroom/SearchBarSalle";
 import PaginationSalle from "@/components/classroom/PaginationSalle";
+import SubHeader from "@/components/Layouts/SubHeader";
 
 // Données des salles (sera remplacé par un appel API plus tard)
 const salles = [
@@ -83,13 +84,12 @@ export default function AllSalles() {
   const paginatedSalles = filteredSalles.slice(startIndex, startIndex + ITEMS_PER_PAGE);
 
   return (
-    <section className="p-4 sm:p-8">
-      {/* Le header */}
-      <HeaderSalle
+    <section>
+   
+      <SubHeader
         title="Salles"
         subtitle="Liste des salles disponibles"
         buttonLabel="Nouvelle salle"
-        // ✅ CORRIGÉ : Navigation vers /classroom/create au lieu de console.log
         onButtonClick={() => router.push('/classroom/create')}
       />
 

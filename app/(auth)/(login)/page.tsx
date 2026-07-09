@@ -10,15 +10,15 @@ import RigthPart from "@/components/auth/RigthPart"
 export default function Login() {
   
     return (
-    <main className="min-h-screen flex">
+    <main className="min-h-screen flex items-center main-container">
 
         { /*Partie de gauche*/}
 
-             <LeftPart/>
+            <LeftPart className={"hidden h-screen md:flex md:w-1/2 w-full"} />
 
         {/*Partie de droite*/}
           
-             <RigthPart/>
+             <RigthPart className={""} />
             
 
 

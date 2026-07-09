@@ -112,7 +112,7 @@ const dernierEmprunts = [
 const shortcuts = [
   {
     label: "Nouvel emprunt",
-    href: "/emprunts/new",
+    href: "/loan/create",
     color: "text-[#2FA89E]",
     bg: "bg-[#EAF7F6]",
     icon: (
@@ -123,7 +123,7 @@ const shortcuts = [
   },
   {
     label: "Retour d'ordinateur",
-    href: "/emprunts/retour",
+    href: "#",
     color: "text-blue-500",
     bg: "bg-blue-50",
     icon: (
@@ -134,7 +134,7 @@ const shortcuts = [
   },
   {
     label: "Ajouter un ordinateur",
-    href: "/ordinateurs/new",
+    href: "/computer/create",
     color: "text-green-500",
     bg: "bg-green-50",
     icon: (
@@ -145,7 +145,7 @@ const shortcuts = [
   },
   {
     label: "Ajouter un apprenant",
-    href: "/apprenants/new",
+    href: "/student/create",
     color: "text-purple-500",
     bg: "bg-purple-50",
     icon: (
@@ -156,7 +156,7 @@ const shortcuts = [
   },
   {
     label: "Ajouter une salle",
-    href: "/salle/create",
+    href: "/classroom/create",
     color: "text-orange-500",
     bg: "bg-orange-50",
     icon: (
@@ -167,7 +167,7 @@ const shortcuts = [
   },
   {
     label: "Rapports",
-    href: "/rapports",
+    href: "#",
     color: "text-teal-600",
     bg: "bg-teal-50",
     icon: (
@@ -356,7 +356,7 @@ export default function Dashboard() {
                     </div>
                 ))}
                 </div>
-                <Link href="/activites" className="flex items-center gap-1 mt-4 text-xs font-semibold text-[#2FA89E] hover:underline">
+                <Link href="#" className="flex items-center gap-1 mt-4 text-xs font-semibold text-[#2FA89E] hover:underline">
                 Voir toutes les activités
                 <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><polyline points="9 18 15 12 9 6" /></svg>
                 </Link>
@@ -408,7 +408,7 @@ export default function Dashboard() {
             {/* Raccourcis */}
             <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
                 <h2 className="text-sm font-bold text-gray-800 mb-4">Raccourcis</h2>
-                <div className="grid grid-cols-3 gap-3">
+                <div className="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2  gap-3">
                 {shortcuts.map((s) => (
                     <Link
                     key={s.label}

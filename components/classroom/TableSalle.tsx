@@ -57,9 +57,9 @@ export default function TableSalle({ salles }: TableProps) {
                         <td className="px-4 py-4 text-gray-1 truncate">{salle.ordinateurs} ordinateur(s)</td>
                         <td className="px-4 py-4">
                         <div className="flex gap-2">
-                            <button className="p-2 rounded-lg bg-gray-50 cursor-pointer hover:bg-gray-100">
+                            <Link href={`/classroom/edit/${salle.id}`} className="p-2 rounded-lg bg-gray-50 cursor-pointer hover:bg-gray-100">
                                 <FiEdit3 className="text-gray-1 w-4 h-4" />
-                            </button>
+                            </Link>
                             <button className="p-2 rounded-lg bg-red-50 cursor-pointer hover:bg-red-100">
                                 <FiTrash2 className="text-red-500 w-4 h-4" />
                             </button>

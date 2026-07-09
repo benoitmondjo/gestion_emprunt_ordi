@@ -16,7 +16,7 @@ export default function Navbar({ sidbarOpen , setSidebarOpen, title, subtitle }:
             </button>
 
             <div>
-                <h1 className="text-sm  md:text-lg lg:text-[1.7rem]  font-bold text-gray-800 leading-tight">{title}</h1>
+                <h1 className="text-sm  text-[1.7rem]  font-bold text-gray-800 leading-tight">{title}</h1>
                 {subtitle && <h3 className="text-xs text-gray-1">{subtitle}</h3>}
             </div>
         </div>

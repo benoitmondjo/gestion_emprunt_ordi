@@ -1,13 +1,19 @@
 
 
-export default function Input({type, placeholder, classe}:{type:string, placeholder:string, classe?:string}){
+export default function Input({name='',type='text', placeholder, classe=''}:{name?:string, type?:string, placeholder?:string, classe?:string}){
     return(
-        <div>
-            <input
-              type={type}
-              placeholder={placeholder}
-              className={`w-full outline-none ${classe}`}
-            />   
-        </div>
+        <>
+           <div className="">
+
+                <input 
+                    type={type} 
+                    name={name}
+                    placeholder={placeholder ? placeholder : ''}
+                    className={`w-full block rounded-xl border border-gray-300 focus:outline-none focus:ring-1 focus:ring-primary  px-2 py-3 ${classe}`}
+                />
+           </div>
+        </>
+
+        
     )
 }
