@@ -17,7 +17,7 @@ export default function SubHeader({ title, subtitle, buttonLabel, onButtonClick 
             <button
                 onClick={onButtonClick}
                 className="flex items-center gap-2 bg-primary shadow hover:opacity-90 text-white 
-                    px-4 py-2 rounded-lg text-sm font-medium font-inter cursor-pointer w-fit"
+                    px-4 py-3 rounded-xl text-sm font-medium font-inter cursor-pointer w-fit"
             >
                 <FiPlus />
                 {buttonLabel}

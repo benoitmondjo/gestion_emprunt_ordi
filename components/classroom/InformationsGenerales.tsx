@@ -1,83 +1,57 @@
-import React from 'react';
+import Input from "@/components/ui/input-element";
+import Select from "@/components/ui/select-element";
+import {ArrayOptionsType} from "@/components/ui/select-element";
+
+
+const responsables: ArrayOptionsType =[
+    {id:1, title: 'jean Bernard'},
+    {id:2, title: 'Pierre Girauld'},
+    {id:3, title: 'Jhone MABIKA'},
+]
+
+const formations: ArrayOptionsType =[
+    {id:4, title: 'developpeur web'},
+    {id:5, title: 'digital creator'},
+    {id:6, title: 'marketing digital'},
+]
+
+const students: ArrayOptionsType = [
+
+{id:1, title: 'developpeur web'},
+    {id:7, title: 'mondjo'},
+    {id:8, title: 'martial'},
+    {id:9, title: 'Rony Gael'},
+]
 
 const InformationsGenerales = () => {
-  return (
-    <div className="space-y-6">
-      {/* Titre de section */}
-      <h3 className="text-lg font-semibold text-gray-900">Informations générales</h3>
-      
-      {/* Grille responsive : 1 colonne sur mobile, 2 colonnes sur desktop */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        
-        {/* ===== COLONNE GAUCHE ===== */}
-        <div className="space-y-4">
-          
-          {/* Champ Nom de la salle */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              Nom de la salle
-            </label>
-            <input 
-              type="text" 
-              defaultValue="Salle 103" 
-              placeholder="Ex: Salle 103"
-              className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent bg-white"
-            />
-          </div>
 
-          {/* Champ Responsable (2 sélecteurs côte à côte) */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              Responsable
-            </label>
-            <div className="flex gap-2">
-               <select className="flex-1 px-3 py-2.5 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-teal-500">
-                 <option>Sélectionner...</option>
-                 <option>Pierre Dubois</option>
-                 <option>Isabelle Moreau</option>
-               </select>
-               <select className="flex-1 px-3 py-2.5 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-teal-500">
-                 <option>Sélectionner...</option>
-                 <option>Pierre Dubois</option>
-                 <option>Isabelle Moreau</option>
-               </select>
+    return (
+        <div className="space-y-6">
+
+            {/* Titre de section */}
+            <h3 className="text-xl font-semibold text-gray-900">Informations générales</h3>
+            
+            {/* Grille responsive : 1 colonne sur mobile, 2 colonnes sur desktop */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                
+                {/* choix de la salle */}
+                <Input label="Nom de la salle" />
+
+                {/* choix du responsable de la salle */}
+                <Select label="Responsable de la classe" optionsData={responsables} />
+
+                {/* Champ Formation */}
+                <Select label="Formation" optionsData={formations} />
+
+
+                {/* Champ Chef de classe */}
+                <Select label="Sélectionner un chef de classe" optionsData={students} />
+
             </div>
-          </div>
-        </div>
 
-        {/* ===== COLONNE DROITE ===== */}
-        <div className="space-y-4">
-          
-          {/* Champ Formation */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              Formation
-            </label>
-            <select className="w-full px-3 py-2.5 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-teal-500">
-              <option>Sélectionner une formation</option>
-              <option>Formation A</option>
-              <option>Formation B</option>
-              <option>Formation C</option>
-            </select>
-          </div>
-
-          {/* Champ Chef de classe */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              Chef de classe
-            </label>
-            <select className="w-full px-3 py-2.5 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-teal-500">
-              <option>Sélectionner un chef de classe</option>
-              <option>Michel Faure</option>
-              <option>Marie Dubois</option>
-              <option>Marie Curie</option>
-              <option>Isabelle Noreau</option>
-            </select>
-          </div>
         </div>
-      </div>
-    </div>
-  );
+    );
+
 };
 
 export default InformationsGenerales;

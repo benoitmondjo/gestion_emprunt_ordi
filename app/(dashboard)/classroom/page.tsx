@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation"; // ✅ Ajout du hook de navigation
+import { useRouter } from "next/navigation"; // Ajout du hook de navigation
 import TableSalle from "@/components/classroom/TableSalle";
-import HeaderSalle from "@/components/classroom/HeaderSalle";
 import SearchBarSalle from "@/components/classroom/SearchBarSalle";
 import PaginationSalle from "@/components/classroom/PaginationSalle";
 import SubHeader from "@/components/Layouts/SubHeader";
@@ -67,12 +66,11 @@ const ITEMS_PER_PAGE = 3;
 
 /**
  * Page qui affiche toutes les salles de classes
- * Route : /classroom
  */
 export default function AllSalles() {
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const router = useRouter(); // ✅ Hook de navigation
+  const router = useRouter(); // Hook de navigation
 
   // Filtrage selon la recherche (insensible à la casse)
   const filteredSalles = salles.filter((salle) =>

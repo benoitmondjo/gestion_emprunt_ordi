@@ -2,7 +2,7 @@
 import { useRouter } from "next/navigation";
 import { FaUser, FaEnvelope, FaLock } from "react-icons/fa";
 import Input from "./Input";
-import SubmitBtn from "../ui/SubmitBtn";
+import SubmitBtn from "@/components/ui/submit-btn-element";
 
 export default function RigthPart({className}:{className?: string}) {
 

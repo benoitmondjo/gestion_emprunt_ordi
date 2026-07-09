@@ -1,4 +1,12 @@
-import React from 'react';
+import Input from "@/components/ui/input-element";
+import {ArrayOptionsType} from "@/components/ui/select-element";
+
+
+const responsables: ArrayOptionsType =[
+    {id:1, title: 'jean Bernard'},
+    {id:2, title: 'Pierre Girauld'},
+    {id:3, title: 'Jhone MABIKA'},
+]
 
 const EquipementsCapacite = () => {
   return (
@@ -7,36 +15,18 @@ const EquipementsCapacite = () => {
       <h3 className="text-lg font-semibold text-gray-900">Équipements et capacité</h3>
       
       {/* Grille responsive : 1 colonne sur mobile, 2 colonnes sur desktop */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         
-        {/* Champ Capacité */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Capacité
-          </label>
-          <input 
-            type="number" 
-            min="1"
-            defaultValue="20" 
-            placeholder="Ex: 20"
-            className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent bg-white"
-          />
-        </div>
+            {/* Champ Capacité */}
+            <Input label="Capacité" type="number"  />
 
-        {/* Champ Ordinateurs */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Ordinateurs
-          </label>
-          <input 
-            type="number" 
-            min="0"
-            defaultValue="20" 
-            placeholder="Ex: 20"
-            className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent bg-white"
-          />
+            {/* Champ effectif */}
+            <Input label="Effectif" type="number"  />
+
+            {/* Champ Ordinateurs */}
+            <Input label="Total ordinateur affecté" type="number"  />
+
         </div>
-      </div>
 
       {/* 
         NOTE : Les équipements additionnels (Projecteur, Tableau blanc, etc.) 
