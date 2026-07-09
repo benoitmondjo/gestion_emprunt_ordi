@@ -42,26 +42,14 @@ export default function EditClassroom() {
 
         {/* Section 1 : Nom, Formation, Responsable, Chef de classe */}
         <InformationsGenerales
-          nom={nom}
-          onNomChange={setNom}
-          formations={formations}
-          onFormationsChange={setFormations}
-          responsable1={responsable1}
-          onResponsable1Change={setResponsable1}
-          responsable2={responsable2}
-          onResponsable2Change={setResponsable2}
-          chefsDeClasse={chefsDeClasse}
-          onChefsDeClasseChange={setChefsDeClasse}
+        
         />
 
         {/* Section 2 : Capacité + Ordinateurs
             NOTE : "Équipements additionnels" volontairement omis
             sur consigne du chef de projet (Benoît) */}
         <EquipementsCapacite
-          capacite={capacite}
-          onCapaciteChange={setCapacite}
-          ordinateurs={ordinateurs}
-          onOrdinateursChange={setOrdinateurs}
+        
         />
 
         {/* Boutons Annuler / Enregistrer les modifications
