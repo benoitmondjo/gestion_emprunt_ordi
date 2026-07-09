@@ -13,17 +13,8 @@ interface FormActionsProps {
 
 /**
  * Barre d'actions en bas du formulaire : bouton "Annuler" + bouton de confirmation.
-<<<<<<< HEAD
- *
- * Le texte du bouton de confirmation est paramétrable via `labelConfirm`,
- * ce qui permet de réutiliser ce composant pour :
- * - "Créer la salle" (page create)
- * - "Enregistrer les modifications" (page edit)
- * sans dupliquer de code.
-=======
  * Le texte du bouton est paramétrable via labelConfirm, ce qui permet de
  * réutiliser ce composant pour "Créer la salle" ET "Enregistrer les modifications".
->>>>>>> b31105c (conflis /components/UI/MultiSelect.tsx; /componnts/salle/FormAction.tsx)
  */
 export default function FormActions({
   labelConfirm,
