@@ -5,13 +5,18 @@ export const apprenants: Apprenant[] = [
     { 
         id: 1, 
         nomComplet: "Mamadou Diallo", 
+        nom: "Mamadou", 
+        prenom: "Diallo",
         matricule: "APP-2024-0001", 
         groupe: "Salle 101", 
         email: "mamadou.dialla@campus.sn", 
         telephone: "77 123 46 67", statut: "Actif" 
     },
     { 
-        id: 2, nomComplet: "Awa Fall", 
+        id: 2, 
+        nomComplet: "Awa Fall", 
+        nom: "Awa", 
+        prenom: "Fall",
         matricule: "APP-2024-0002", 
         groupe: "Salle 101", 
         email: "awa.fall@campus.sn", 
@@ -21,6 +26,8 @@ export const apprenants: Apprenant[] = [
     { 
         id: 3, 
         nomComplet: "Ibrima Ba", 
+        nom: "Ibrima ", 
+        prenom: "Ba",
         matricule: "APP-2024-0003", 
         groupe: "Salle 102", 
         email: "ibrahima.ba@campus.sn", 
@@ -30,6 +37,8 @@ export const apprenants: Apprenant[] = [
     { 
         id: 4, 
         nomComplet: "Ndeye Diop", 
+        nom: "Ndeye", 
+        prenom: "Diop",
         matricule: "APP-2024-0004", 
         groupe: "Salle 103", 
         email: "ndeye.diop@campus.sn", 
@@ -39,6 +48,8 @@ export const apprenants: Apprenant[] = [
     { 
         id: 5, 
         nomComplet: "Cheikh Sy", 
+        nom: "Cheikh",
+        prenom: "sy", 
         matricule: "APP-2024-0005", 
         groupe: "Salle 201", 
         email: "cheikh.sy@campus.sn", 
@@ -48,6 +59,8 @@ export const apprenants: Apprenant[] = [
     { 
         id: 6, 
         nomComplet: "Astou Kane", 
+        nom: "Astou",
+        prenom: "Kane", 
         matricule: "APP-2024-0006", 
         groupe: "Salle 202", 
         email: "astou.kane@campus.sn", 
@@ -57,6 +70,8 @@ export const apprenants: Apprenant[] = [
     { 
         id: 7, 
         nomComplet: "Ousmane Mbaye", 
+        nom: "Mbaye", 
+        prenom: "Ousmane",
         matricule: "APP-2024-0007", 
         groupe: "Salle 203", 
         email: "ousmane.mbaye@campus.sn", 

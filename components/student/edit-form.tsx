@@ -4,6 +4,7 @@ import BtnFormAction from "@/components/ui/btn-action-form";
 import Input from "@/components/ui/input-element";
 import Select from "@/components/ui/select-element";
 import { salles } from "@/lib/mock/classroom-data";
+import { Apprenant } from "@/types/student-type";
 
 const genre = [
     {id:1, title:"masculin"},
@@ -17,7 +18,7 @@ const classrooms = salles.map( (salle) => {
     }
 } )
 
-export default function FormEditStudent(){
+export default function FormEditStudent({student}: {student: Apprenant | any}){
 
 
     return(<div className="bg-white p-6 rounded-lg space-y-8">
@@ -31,12 +32,12 @@ export default function FormEditStudent(){
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 
-                <Input label='Nom' />
-                <Input label='Prenom' />
-                <Input label='Date de naissance' type="date" />
+                <Input label='Nom' defaultValue={student.nom} />
+                <Input label='Prenom' defaultValue={student.prenom} />
+                <Input label='Date de naissance' type="date"  />
                 <Select label="Genre" optionsData={genre} />              
-                <Input label="Telephone" type="tel" />
-                <Input label="Email" type="email" />
+                <Input label="Telephone" type="tel" defaultValue={student.telephone} />
+                <Input label="Email" type="email"  defaultValue={student.email} />
 
             </div>
 

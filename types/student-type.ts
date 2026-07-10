@@ -2,6 +2,8 @@
 export interface Apprenant {
     id: number;
     nomComplet: string;
+    nom:string,
+    prenom?:string
     matricule: string;
     groupe: string;
     email: string;

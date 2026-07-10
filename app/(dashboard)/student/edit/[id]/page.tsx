@@ -17,7 +17,7 @@ export default async function ModifierApprenant ({params}: {params: Promise<{id:
             <SubNavigation title="Modifier un apprenant" subTitle={`Modifier l'apprenant *${student?.nomComplet}*`} link={{label: 'Apprenant', url: '/student'}} />
 
             {/*Formulaire*/}
-            <FormEditStudent />
+            <FormEditStudent student={student} />
         </main>
     )
 }
