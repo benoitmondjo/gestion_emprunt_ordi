@@ -23,7 +23,7 @@ export default function FormCreateClassroom(){
                 <EquipementsCapacite />
 
                 {/* btn enregistrer et btn annuler */}
-                <BtnFormAction />
+                <BtnFormAction label1="Ajouter" label2="Annuler" />
             </form>
 
         </div>

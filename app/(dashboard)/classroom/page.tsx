@@ -7,59 +7,7 @@ import SearchBarSalle from "@/components/classroom/SearchBarSalle";
 import PaginationSalle from "@/components/classroom/PaginationSalle";
 import SubHeader from "@/components/Layouts/SubHeader";
 
-// Données des salles (sera remplacé par un appel API plus tard)
-const salles = [
-  {
-    id: 1,
-    nom: "Salle 101",
-    formation: "Formation A",
-    responsable: "Pierre Dubois",
-    chefDeClasse: "Marie Curie",
-    capacite: 20,
-    effectif: 30,
-    ordinateurs: 18,
-  },
-  {
-    id: 2,
-    nom: "Salle 102",
-    formation: "Formation A",
-    responsable: "Pierre Dubois",
-    chefDeClasse: "Louis Pasteur",
-    capacite: 25,
-    effectif: 35,
-    ordinateurs: 24,
-  },
-  {
-    id: 3,
-    nom: "Salle 201",
-    formation: "Formation A",
-    responsable: "Isabelle Moreau",
-    chefDeClasse: "Jean Moulin",
-    capacite: 30,
-    effectif: 45,
-    ordinateurs: 28,
-  },
-  {
-    id: 4,
-    nom: "Salle 202",
-    formation: "Formation B",
-    responsable: "Michelle Faure",
-    chefDeClasse: "Sophie Germain",
-    capacite: 20,
-    effectif: 45,
-    ordinateurs: 19,
-  },
-  {
-    id: 5,
-    nom: "Salle 301",
-    formation: "Formation B",
-    responsable: "Michelle Faure",
-    chefDeClasse: "Victor Hugo",
-    capacite: 40,
-    effectif: 45,
-    ordinateurs: 38,
-  },
-];
+import { salles } from "@/lib/mock/classroom-data";
 
 // Le nombre d'items par page
 const ITEMS_PER_PAGE = 3;
@@ -87,7 +35,7 @@ export default function AllSalles() {
       <SubHeader
         title="Salles"
         subtitle="Liste des salles disponibles"
-        buttonLabel="Nouvelle salle"
+        link={{label: "Ajputer une salle", url:"/classroom/create"}}
         onButtonClick={() => router.push('/classroom/create')}
       />
 

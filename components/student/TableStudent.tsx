@@ -1,33 +1,23 @@
 import { FiEdit3, FiTrash2 } from "react-icons/fi";
 import Link from "next/link";
-
-// Structure d'un apprenant
-export interface Apprenant {
-    id: number;
-    nomComplet: string;
-    matricule: string;
-    groupe: string;
-    email: string;
-    telephone: string;
-    statut: "Actif" | "Inactif";
-}
+import { Apprenant } from "@/types/student-type";
 
 // structure du props
-interface TableApprenantsProps {
+export interface TableApprenantsProps {
     apprenants: Apprenant[];
     onEdit?: (apprenant: Apprenant) => void;
     onDelete?: (apprenant: Apprenant) => void;
 }
+
 
 export default function TableStudent({ apprenants, onEdit, onDelete }: TableApprenantsProps) {
     return (
         <div className="overflow-x-auto">
             <table className="w-full font-inter table-fixed min-w-200">
                 <thead>
-                    <tr className="border-b border-gray-50 shadow">
+                    <tr className="border-b border-gray-300">
                         <th className="text-left text-base font-bold text-gray-1 px-4 py-3 w-[15%] truncate">Nom complet</th>
-                        <th className="text-left text-base font-bold text-gray-1 px-4 py-3">Matricule</th>
-                        <th className="text-left text-base font-bold text-gray-1 px-4 py-3">Groupe</th>
+                        <th className="text-left text-base font-bold text-gray-1 px-4 py-3">Classe</th>
                         <th className="text-left text-base font-bold text-gray-1 px-4 py-3">Email</th>
                         <th className="text-left text-base font-bold text-gray-1 px-4 py-3">Téléphone</th>
                         <th className="text-left text-base font-bold text-gray-1 px-4 py-3">Statut</th>
@@ -37,9 +27,8 @@ export default function TableStudent({ apprenants, onEdit, onDelete }: TableAppr
 
                 <tbody>
                     {apprenants.map((apprenant) => (
-                        <tr key={apprenant.id} className="border-b border-gray-50 shadow  hover:bg-gray-200 duration-100">
+                        <tr key={apprenant.id} className="border-b border-gray-300  hover:bg-gray-100 duration-100">
                             <td className="px-4 py-4 font-medium text-gray-900 truncate">{apprenant.nomComplet}</td>
-                            <td className="px-4 py-4 text-gray-1 truncate">{apprenant.matricule}</td>
                             <td className="px-4 py-4 text-gray-1 truncate">{apprenant.groupe}</td>
                             <td className="px-4 py-4 text-gray-1 truncate">{apprenant.email}</td>
                             <td className="px-4 py-4 text-gray-1 truncate">{apprenant.telephone}</td>
@@ -57,7 +46,7 @@ export default function TableStudent({ apprenants, onEdit, onDelete }: TableAppr
                             </td>
                             <td className="px-4 py-4">
                                 <div className="flex gap-2">
-                                    <Link href={`/student/edit`} onClick={() => onEdit?.(apprenant)} className="p-2 rounded-lg bg-gray-50 cursor-pointer hover:bg-gray-100">
+                                    <Link href={`/student/edit/${apprenant.id}`} onClick={() => onEdit?.(apprenant)} className="p-2 rounded-lg bg-gray-50 cursor-pointer hover:bg-gray-100">
                                         <FiEdit3 className="text-gray-1 w-4 h-4" />
                                     </Link>
                                     <button onClick={() => onDelete?.(apprenant)} className="p-2 rounded-lg bg-red-50 cursor-pointer hover:bg-red-100">

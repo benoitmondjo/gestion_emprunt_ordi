@@ -7,12 +7,12 @@ import ResettBtn from "@/components/ui/reset-btn-element";
  * Le texte du bouton est paramétrable via labelConfirm, ce qui permet de
  * réutiliser ce composant pour "Créer la salle" ET "Enregistrer les modifications".
  */
-export default function BtnFormAction() {
+export default function BtnFormAction({label1, label2}: {label1:string, label2:string}) {
     return(<>
         <div className="flex justify-end">
             <div className="w-fit flex gap-2">
-                <SubmitBtn label="Modifier" className="bg-primary text-sm text-white px-4" />
-                <ResettBtn label="Annuler" className="border border-gray-400 px-4" />
+                <SubmitBtn label={label1} className="bg-primary text-sm text-white px-4" />
+                <ResettBtn label={label2} className="border border-gray-400 px-4" />
             </div>
         </div>
     </>)

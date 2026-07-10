@@ -1,15 +1,30 @@
 
+import { IconType } from "react-icons"
 
-export default function Input({name='',type='text', placeholder, classe=''}:{name?:string, type?:string, placeholder?:string, classe?:string}){
+type PropsInput = 
+    {
+        name?:string, 
+        type?:string, 
+        placeholder?:string, 
+        classe?:string, 
+        icon: IconType,
+        iconClasse: string
+    }
+
+
+export default function Input(
+    {name='',type='text', placeholder='', classe='', icon: Icon, iconClasse}: PropsInput
+){
     return(
         <>
-           <div className="">
-
+           <div className="flex items-center gap-4 rounded-xl border border-gray-300 
+                     px-2 py-3">
+                <Icon className={`text-primary ${iconClasse}`} />
                 <input 
                     type={type} 
                     name={name}
-                    placeholder={placeholder ? placeholder : ''}
-                    className={`w-full block rounded-xl border border-gray-300 focus:outline-none focus:ring-1 focus:ring-primary  px-2 py-3 ${classe}`}
+                    placeholder={placeholder}
+                    className={`w-full block focus:outline-none text-md  ${classe}`}
                 />
            </div>
         </>

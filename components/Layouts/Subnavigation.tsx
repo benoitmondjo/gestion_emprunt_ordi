@@ -1,6 +1,8 @@
 import Link from "next/link"
 
-export default function SubNavigation({title, link, subTitle}: {title: string, link: {label: string, url: string}, subTitle: string}){
+export default function SubNavigation(
+    {title, link, subTitle}: 
+    {title: string, link: {label: string, url: string}, subTitle: string}){
 
 return(<>
     

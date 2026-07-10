@@ -1,76 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import HeaderStudent from "@/components/student/HeaderStudent";//On importe le composant Header
-import TableStudent, { Apprenant } from "@/components/student/TableStudent";//On importe le composant TableApprenant
+
+import SubHeader from "@/components/Layouts/SubHeader";
+
 import SearchBarStudent from "@/components/student/SearchBarStudent";//On importe le composant SearchBar
+import TableStudent from "@/components/student/TableStudent";//On importe le composant TableApprenant
 import PaginationStudent from "@/components/student/PaginationStudent";//On importe le composant Pagination
 
+import {apprenants} from "@/lib/mock/student-data"
 
-//On crée un tableau d'apprenant
-const apprenants: Apprenant[] = [
-    { 
-    id: 1, 
-    nomComplet: "Mamadou Diallo", 
-    matricule: "APP-2024-0001", 
-    groupe: "Salle 101", 
-    email: "mamadou.dialla@campus.sn", 
-    telephone: "77 123 46 67", statut: "Actif" 
-    },
-    { 
-    id: 2, nomComplet: "Awa Fall", 
-    matricule: "APP-2024-0002", 
-    groupe: "Salle 101", 
-    email: "awa.fall@campus.sn", 
-    telephone: "78 234 56 78", 
-    statut: "Actif" 
-    },
-    { 
-    id: 3, 
-    nomComplet: "Ibrima Ba", 
-    matricule: "APP-2024-0003", 
-    groupe: "Salle 102", 
-    email: "ibrahima.ba@campus.sn", 
-    telephone: "78 345 67 89", 
-    statut: "Actif" 
-    },
-    { 
-    id: 4, 
-    nomComplet: "Ndeye Diop", 
-    matricule: "APP-2024-0004", 
-    groupe: "Salle 103", 
-    email: "ndeye.diop@campus.sn", 
-    telephone: "77 456 78 80", 
-    statut: "Actif" 
-    },
-    { 
-    id: 5, 
-    nomComplet: "Cheikh Sy", 
-    matricule: "APP-2024-0005", 
-    groupe: "Salle 201", 
-    email: "cheikh.sy@campus.sn", 
-    telephone: "78 567 89 01", 
-    statut: "Inactif" 
-    },
-    { 
-    id: 6, 
-    nomComplet: "Astou Kane", 
-    matricule: "APP-2024-0006", 
-    groupe: "Salle 202", 
-    email: "astou.kane@campus.sn", 
-    telephone: "78 676 90 12", 
-    statut: "Actif" 
-    },
-    { 
-    id: 7, 
-    nomComplet: "Ousmane Mbaye", 
-    matricule: "APP-2024-0007", 
-    groupe: "Salle 203", 
-    email: "ousmane.mbaye@campus.sn", 
-    telephone: "77 788 01 23", 
-    statut: "Actif" 
-    },
-];
+
 
 // On définit le nombre d'items présent dans le tableau
 const ITEMS_PER_PAGE = 3;
@@ -95,31 +35,36 @@ export default function AllStudents() {
         currentPage * ITEMS_PER_PAGE
     );
     return (
-        <section className="p-6">   
-            <HeaderStudent
-                title="Apprenants"
-                subtitle="Liste des apprenants enregistrés"
-                buttonLabel="Nouvel apprenant"
-                onButtonClick={() => console.log("ouvrir modal apprenant")}
+        <section>   
+           
+           <SubHeader 
+                title="Liste des apprenants" 
+                subtitle="Tous les apprenants de la fabrique"   
+                link={{label: "nouveau apprenant", url: '/student/create'}}
             />
 
             <div className="bg-white rounded-xl shadow p-4">
                 {/* Barre de recherche et filtres */}
                 <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
-                        <SearchBarStudent
-                            value={search}
-                            onChange={(v) => { setSearch(v); setCurrentPage(1); }} // on revient à la page 1 à chaque recherche
-                            placeholder="Rechercher un apprenant..."
-                         />
+                    <SearchBarStudent
+                        value={search}
+                        onChange={(v) => { setSearch(v); setCurrentPage(1); }} // on revient à la page 1 à chaque recherche
+                        placeholder="Rechercher un apprenant..."
+                        />
+
                     {/* Les options de filtrage */}
                     <select className="border border-gray-100 rounded-lg px-3 py-2 text-sm font-inter">
-                        <option>Tous les groupes</option>
+                        <option>Toutes les salles</option>
+                        <option>Developpeurs</option>
+                        <option>Digital creator</option>
                     </select>
+
                     <select className="border border-gray-100 rounded-lg px-3 py-2 text-sm font-inter">
                         <option>Statut</option>
                         <option>Actif</option>
                         <option>Inactif</option>
                     </select>
+
                 </div>
 
                 {/* Tableau d'apprenants */}
